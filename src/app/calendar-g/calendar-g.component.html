@@ -1,0 +1,9 @@
+<!-- calendar.component.html -->
+<p-calendar [(ngModel)]="date" [inline]="true" [showWeek]="true">
+  <ng-template pTemplate="date" let-day>
+    <span [ngClass]="{'completed-day': day.completed, 'incomplete-day': !day.completed}"
+          (click)="toggleDayCompletion(day)">
+      {{ day.date.getDate() }}
+    </span>
+  </ng-template>
+</p-calendar>
